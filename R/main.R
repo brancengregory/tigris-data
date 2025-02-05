@@ -143,23 +143,3 @@ if (!dir.exists(output_dir)) {
 }
 
 data <- scrape_geodata(services, base_url, output_dir)
-
-# s <- services[1,]
-# ms <- s |>
-#   mutate(base_url = base_url) |>
-#   pmap(open_service, .progress = TRUE) |>
-#   pluck(1)
-# layers_list <- arcgislayers::get_all_layers(ms)$layers
-
-# all_data <- layers_list |>
-#   purrr::map(~ {
-#     tryCatch(
-#       arcgislayers::arc_select(.x),
-#       error = \(e) {
-#         warning(str_c("Failed to query layer ", .x$name, ": ", e$message))
-#         NULL
-#       }
-#     )
-#   },
-#   .progress = TRUE
-# )
